@@ -2,7 +2,7 @@
 #include <cstdlib>
 #define _USE_MATH_DEFINES 
 #include <cmath>
-//test
+//test //ya 
 #ifdef __APPLE__
 #include <OpenGL/gl.h> 
 #include <OpenGL/glu.h> 
