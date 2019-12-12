@@ -3,6 +3,13 @@
 #define _USE_MATH_DEFINES 
 #include <cmath>
 //test //ya 
+//test
+//jida
+//test 2.0
+//jkjkj
+//yumi
+//user
+//hallo
 #ifdef __APPLE__
 #include <OpenGL/gl.h> 
 #include <OpenGL/glu.h> 
@@ -209,7 +216,7 @@ int main(int argc, char* argv[]){
     glEnable(GL_BLEND);
     glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glutMainLoop();
-
+    
     return 0;
 }
 
