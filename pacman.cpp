@@ -9,6 +9,7 @@
 //test 2.0
 //jkjkj
 //yumi
+//user
 >>>>>>> e0540972d6237430ce1d35a02e3674d1c5a96b5a
 #ifdef __APPLE__
 #include <OpenGL/gl.h> 
