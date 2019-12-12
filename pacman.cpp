@@ -3,6 +3,7 @@
 #define _USE_MATH_DEFINES 
 #include <cmath>
 //test
+//jida
 #ifdef __APPLE__
 #include <OpenGL/gl.h> 
 #include <OpenGL/glu.h> 
