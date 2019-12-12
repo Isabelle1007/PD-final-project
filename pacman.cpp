@@ -3,6 +3,13 @@
 #define _USE_MATH_DEFINES 
 #include <cmath>
 //test
+<<<<<<< HEAD
+//jida
+=======
+//test 2.0
+//jkjkj
+//yumi
+>>>>>>> e0540972d6237430ce1d35a02e3674d1c5a96b5a
 #ifdef __APPLE__
 #include <OpenGL/gl.h> 
 #include <OpenGL/glu.h> 
