@@ -4,7 +4,8 @@
 #include <cmath>
 //test
 //test 2.0
-//jkjkj 
+//jkjkj
+//yumi
 #ifdef __APPLE__
 #include <OpenGL/gl.h> 
 #include <OpenGL/glu.h> 
