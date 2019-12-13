@@ -24,8 +24,8 @@
 #include <windows.h>
 #endif
 
-struct color{float r, g, b;};
-struct point{float x, y;};
+struct Color{float r, g, b;};
+struct Point{float x, y;};
 
 bool trigger_left_key = false;
 bool trigger_up_key = false;
@@ -39,7 +39,7 @@ bool trigger_down_key = false;
    - height: 長方形高度
    - c: 長方形填充顏色
 */
-void DrawRectangle(point mid, float width, float height, color c){
+void DrawRectangle(point mid, float width, float height, Color c){
     glBegin(GL_QUADS);
         glColor3f(c.r, c.g, c.b);
         glVertex3f(mid.x - width/2, mid.y - height/2, 0.0);
@@ -57,7 +57,7 @@ void DrawRectangle(point mid, float width, float height, color c){
    - c: 填充顏色
 */
 
-void DrawCircle(point mid, float radius, color c){
+void DrawCircle(point mid, float radius, Color c){
     glBegin(GL_POLYGON);
         glColor3f(c.r, c.g, c.b);
         for(float tt = 0; tt < 2*M_PI;tt += 0.09)
@@ -73,7 +73,7 @@ void DrawCircle(point mid, float radius, color c){
    - theta: 嘴巴角度大小(0~359)
    - orient: 嘴巴朝向(0~359)
 */
-void DrawPacman(point mid, float radius, float theta, float orient, color c){
+void DrawPacman(point mid, float radius, float theta, float orient, Color c){
     float ftheta = theta*M_PI/360.0;
     float tt_mid = orient*2*M_PI/360.0;
     glBegin(GL_POLYGON);
@@ -107,10 +107,10 @@ struct{
     int step;
     int dir;
     int x, y;
-    color c;
+    Color c;
 }pacman;
 
-color wall_color = {0.5, 0.5, 0.5};
+Color wall_Color = {0.5, 0.5, 0.5};
 
 
 point GetRealPoint(int x, int y){
@@ -150,13 +150,13 @@ void SystemTimer(int _value){
 }
 
 void Display(){
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_Color_BUFFER_BIT);
     // 當畫面需要被更新時，這函數就會被呼叫
     // TODO
     for(int lx = 0;lx < 10;lx++)
         for(int ly = 0;ly < 10;ly++)
             if(map[lx][ly] == 1)
-                DrawRectangle(GetRealPoint(lx, ly), 0.18, 0.18, wall_color);
+                DrawRectangle(GetRealPoint(lx, ly), 0.18, 0.18, wall_Color);
    
     float dt = pacman.step*0.25;
     point pt = GetRealPoint(pacman.x, pacman.y);
