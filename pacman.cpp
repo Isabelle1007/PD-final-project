@@ -39,7 +39,7 @@ bool trigger_down_key = false;
    - height: 長方形高度
    - c: 長方形填充顏色
 */
-void DrawRectangle(point mid, float width, float height, Color c){
+void DrawRectangle(Point mid, float width, float height, Color c){
     glBegin(GL_QUADS);
         glColor3f(c.r, c.g, c.b);
         glVertex3f(mid.x - width/2, mid.y - height/2, 0.0);
@@ -57,7 +57,7 @@ void DrawRectangle(point mid, float width, float height, Color c){
    - c: 填充顏色
 */
 
-void DrawCircle(point mid, float radius, Color c){
+void DrawCircle(Point mid, float radius, Color c){
     glBegin(GL_POLYGON);
         glColor3f(c.r, c.g, c.b);
         for(float tt = 0; tt < 2*M_PI;tt += 0.09)
@@ -73,7 +73,7 @@ void DrawCircle(point mid, float radius, Color c){
    - theta: 嘴巴角度大小(0~359)
    - orient: 嘴巴朝向(0~359)
 */
-void DrawPacman(point mid, float radius, float theta, float orient, Color c){
+void DrawPacman(Point mid, float radius, float theta, float orient, Color c){
     float ftheta = theta*M_PI/360.0;
     float tt_mid = orient*2*M_PI/360.0;
     glBegin(GL_POLYGON);
@@ -85,7 +85,8 @@ void DrawPacman(point mid, float radius, float theta, float orient, Color c){
     return;
 }
 
-int map[10][10] = {
+int map[10][10] = 
+{
     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
     {1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
     {1, 0, 1, 1, 0, 1, 1, 1, 0, 1},
@@ -113,8 +114,8 @@ struct{
 Color wall_Color = {0.5, 0.5, 0.5};
 
 
-point GetRealPoint(int x, int y){
-    point ret;
+Point GetRealPoint(int x, int y){
+    Point ret;
     ret.x = -0.9+0.2*x;
     ret.y =  0.9-0.2*y;
     return ret; 
@@ -150,7 +151,7 @@ void SystemTimer(int _value){
 }
 
 void Display(){
-    glClear(GL_Color_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT);
     // 當畫面需要被更新時，這函數就會被呼叫
     // TODO
     for(int lx = 0;lx < 10;lx++)
@@ -159,7 +160,7 @@ void Display(){
                 DrawRectangle(GetRealPoint(lx, ly), 0.18, 0.18, wall_Color);
    
     float dt = pacman.step*0.25;
-    point pt = GetRealPoint(pacman.x, pacman.y);
+    Point pt = GetRealPoint(pacman.x, pacman.y);
     if(pacman.dir == DIR_UP) pt.y += dt*0.2; 
     else if(pacman.dir == DIR_DOWN) pt.y -= dt*0.2; 
     else if(pacman.dir == DIR_LEFT) pt.x -= dt*0.2; 
