@@ -129,7 +129,7 @@ const int DIR_UP = 0;
 const int DIR_DOWN = 1;
 const int DIR_LEFT = 2;
 const int DIR_RIGHT = 3;
-
+//test!
 struct
 {
     int step;
